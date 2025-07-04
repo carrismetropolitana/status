@@ -10,7 +10,7 @@ WORKDIR /app
 
 RUN ls -la
 
-COPY ./configs /etc/nginx/
+COPY configs /etc/nginx/
 
 
 
