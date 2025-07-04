@@ -73,7 +73,7 @@ services:
   # # # # # # # # # # # # # # # # # # # # #
 
   uptime-kuma:
-    image: louislam/uptime-kuma:1
+    image: ghcr.io/louislam/uptime-kuma:beta
     deploy:
       restart_policy:
         condition: any

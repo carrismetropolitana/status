@@ -1,0 +1,30 @@
+# # #
+
+name: carrismetropolitana-status
+
+volumes:
+  certbotdata:
+
+services:
+  #
+
+  # # # # # # # # # # # # # # # # # # # # #
+  # # # # # # # # # # # # # # # # # # # # #
+
+  uptime-kuma:
+    image: ghcr.io/louislam/uptime-kuma:beta
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 30s
+      resources:
+        limits:
+          memory: 100mb
+    logging:
+      options:
+        max-size: '1m'
+        max-file: '1'
+    volumes:
+      - ./uptime-kuma-data:/app/data
+    ports:
+      - 3001:3001
