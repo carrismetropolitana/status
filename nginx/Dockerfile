@@ -10,6 +10,8 @@ WORKDIR /app
 
 COPY ./configs /etc/nginx/
 
+RUN ls ./
+
 
 # # #
 # Run Nginx	with auto-reload every 6 hours
