@@ -140,3 +140,6 @@ vite.config.ts.timestamp-*
 
 # Uptime Kuma
 uptime-kuma-data
+
+
+.DS_Store
