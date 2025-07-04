@@ -36,26 +36,26 @@ services:
   # # # # # # # # # # # # # # # # # # # # #
   # # # # # # # # # # # # # # # # # # # # #
 
-  # nginx:
-  #   image: ghcr.io/carrismetropolitana/status-nginx:production
-  #   deploy:
-  #     restart_policy:
-  #       condition: any
-  #       delay: 30s
-  #     resources:
-  #       limits:
-  #         memory: 1gb
-  #   logging:
-  #     options:
-  #       max-size: '1m'
-  #       max-file: '1'
-  #   volumes:
-  #     - ./letsencrypt:/etc/letsencrypt:ro
-  #     - certbotdata:/var/www/certbot:ro
-  #   ports:
-  #     - 80:80
-  #     - 443:443
-  #   command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
+  nginx:
+    image: ghcr.io/carrismetropolitana/status-nginx:production
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 30s
+      resources:
+        limits:
+          memory: 1gb
+    logging:
+      options:
+        max-size: '1m'
+        max-file: '1'
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt:ro
+      - certbotdata:/var/www/certbot:ro
+    ports:
+      - 80:80
+      - 443:443
+    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
 
   # # # # # # # # # # # # # # # # # # # # #
   # # # # # # # # # # # # # # # # # # # # #
@@ -87,5 +87,5 @@ services:
         max-file: '1'
     volumes:
       - ./uptime-kuma-data:/app/data
-    ports:
-      - 3001:3001
+    # ports:
+    #   - 3001:3001
