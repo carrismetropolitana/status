@@ -8,9 +8,10 @@ WORKDIR /app
 # # #
 # Setup Nginx configuration
 
+RUN ls ./
+
 COPY ./configs /etc/nginx/
 
-RUN ls ./
 
 
 # # #
