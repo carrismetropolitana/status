@@ -80,12 +80,10 @@ services:
         delay: 30s
       resources:
         limits:
-          memory: 100mb
+          memory: 2gb
     logging:
       options:
         max-size: '1m'
         max-file: '1'
     volumes:
       - ./uptime-kuma-data:/app/data
-    # ports:
-    #   - 3001:3001
